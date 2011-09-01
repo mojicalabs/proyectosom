@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://co02intranet:8080/tms/tms_employee_wsService?WSDL" uri="src/conf/xml-resources/web-service-references/tms_employee_wsService/wsdl/co02intranet_8080/tms/tms_employee_wsService.wsdl"/>
+    <system systemId="http://co02intranet:8080/tms/tms_employee_wsService?xsd=1" uri="src/conf/xml-resources/web-service-references/tms_employee_wsService/wsdl/co02intranet_8080/tms/tms_employee_wsService.xsd_1.xsd"/>
+</catalog>
