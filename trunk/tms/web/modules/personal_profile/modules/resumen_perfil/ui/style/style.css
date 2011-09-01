@@ -1,0 +1,58 @@
+/* CSS file */
+
+/*------------------------------------------------------------------------------ Fonts */
+
+/* @font-face
+{
+	src: 					url('../fonts/Myriad.swf');
+	fontFamily: 			'Myriad Pro';
+	fontWeight:				Regular;
+}
+
+@font-face
+{
+	src: 					url('../fonts/Myriad.swf');
+	fontFamily: 			'Myriad Pro Semibold';
+	fontWeight:				Semibold;
+} */
+
+/*------------------------------------------------------------------------------ Global */
+
+/* global
+{
+	font-family:			'Verdana'; */
+	/* color:					#CCCCCC; */
+	
+/* } */
+
+/*------------------------------------------------------------------------------ Text */
+
+/* .title
+{
+	src: 					url('../fonts/Myriad.swf');
+	fontFamily: 			'Myriad Pro';
+	fontWeight: 			Semibold;					
+	font-size:				24;
+	text-align:				right;
+	
+}
+ */
+/*------------------------------------------------------------------------------ Application */
+
+/* Application
+{	
+    background-gradient-colors: #0066cc, #ffffff;
+    font-size:					12;
+    
+} */
+.menuVertical
+{
+	horizontalAlign: left;
+	paddingBottom: 5;
+	paddingLeft: 5;
+	paddingRight: 5;
+	paddingTop: 5;
+	color: #FFFFFF;
+}
+
+/*------------------------------------------------------------------------------ Button */

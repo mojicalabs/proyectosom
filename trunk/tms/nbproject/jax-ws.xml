@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
+  <services>
+    <service name="tms_employee_ws">
+      <implementation-class>tms_employee_ws.tms_employee_ws</implementation-class>
+    </service>
+    <service name="tms_surveys_ws">
+      <implementation-class>tms_surveys_ws.tms_surveys_ws</implementation-class>
+    </service>
+    <service name="tms_settings_ws">
+      <implementation-class>tms_settings_ws.tms_settings_ws</implementation-class>
+    </service>
+    <service name="tms_competencies_ws">
+      <implementation-class>tms_competencies_ws.tms_competencies_ws</implementation-class>
+    </service>
+    <service name="tms_job_ws">
+      <implementation-class>tms_job_ws.tms_job_ws</implementation-class>
+    </service>
+    <service name="tms_personal_ws">
+      <implementation-class>tms_personal_ws.tms_personal_ws</implementation-class>
+    </service>
+    <service name="tms_leadershipstyle_ws">
+      <implementation-class>tms_leadershipstyle_ws.tms_leadershipstyle_ws</implementation-class>
+    </service>
+  </services>
+  <clients/>
+</jax-ws>
