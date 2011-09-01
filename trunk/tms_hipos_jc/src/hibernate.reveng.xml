@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="default"/>
+  <table-filter match-name="hipos_empleados"/>
+  <table-filter match-name="hipos_configuraciones"/>
+  <table-filter match-name="hipo_actividades"/>
+  <table-filter match-name="hipos_dependientes"/>
+  <table-filter match-name="hipo_entidades"/>
+  <table-filter match-name="hipos_asignaciones"/>
+  <table-filter match-name="hipo_tipos_categorias"/>
+  <table-filter match-name="hipos_tarifario_seguro_medico_internacional"/>
+  <table-filter match-name="hipos_beneficiarios"/>
+</hibernate-reverse-engineering>

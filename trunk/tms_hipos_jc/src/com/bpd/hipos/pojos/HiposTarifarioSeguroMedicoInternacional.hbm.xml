@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated May 19, 2011 7:38:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="default" name="com.bpd.hipos.pojos.HiposTarifarioSeguroMedicoInternacional" table="hipos_tarifario_seguro_medico_internacional">
+    <id name="id" type="java.lang.Integer">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <property name="minAge" type="int">
+      <column name="min_age" not-null="true"/>
+    </property>
+    <property name="maxAge" type="int">
+      <column name="max_age" not-null="true"/>
+    </property>
+    <property name="type" type="string">
+      <column length="2" name="type" not-null="true"/>
+    </property>
+    <property name="ammountM" type="java.lang.Double">
+      <column name="ammount_m" precision="22" scale="0"/>
+    </property>
+    <property name="ammountF" type="java.lang.Double">
+      <column name="ammount_f" precision="22" scale="0"/>
+    </property>
+    <property name="status" type="string">
+      <column length="2" name="status" not-null="true"/>
+    </property>
+  </class>
+</hibernate-mapping>
