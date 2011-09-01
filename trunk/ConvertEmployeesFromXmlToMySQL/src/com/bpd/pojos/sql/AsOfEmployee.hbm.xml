@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated May 12, 2011 2:44:00 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="empleados" name="com.bpd.pojos.sql.AsOfEmployee" schema="dbo" table="as_of_employee">
+    <id name="empleado" type="int">
+      <column name="empleado"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="nombre" type="string">
+      <column length="45" name="nombre" not-null="true"/>
+    </property>
+    <property name="firstName" type="string">
+      <column length="25" name="first_name" not-null="true"/>
+    </property>
+    <property name="firstMiddleName" type="string">
+      <column length="25" name="first_middle_name" not-null="true"/>
+    </property>
+    <property name="lastName" type="string">
+      <column length="30" name="last_name" not-null="true"/>
+    </property>
+    <property name="alias" type="string">
+      <column length="50" name="alias" not-null="true"/>
+    </property>
+    <property name="emplId" type="string">
+      <column length="10" name="empl_id" not-null="true"/>
+    </property>
+    <property name="emplDesc" type="string">
+      <column length="30" name="empl_desc" not-null="true"/>
+    </property>
+    <property name="unidad" type="string">
+      <column length="50" name="unidad" not-null="true"/>
+    </property>
+    <property name="departamento" type="string">
+      <column length="50" name="departamento" not-null="true"/>
+    </property>
+    <property name="puesto" type="string">
+      <column length="10" name="puesto" not-null="true"/>
+    </property>
+    <property name="cargo" type="string">
+      <column length="80" name="cargo" not-null="true"/>
+    </property>
+    <property name="hireDate" type="timestamp">
+      <column length="23" name="hire_date" not-null="true"/>
+    </property>
+    <property name="recoDateIni" type="timestamp">
+      <column length="23" name="reco_date_ini" not-null="true"/>
+    </property>
+    <property name="recoDateFin" type="timestamp">
+      <column length="23" name="reco_date_fin"/>
+    </property>
+    <property name="statusChangeDate" type="timestamp">
+      <column length="23" name="status_change_date" not-null="true"/>
+    </property>
+    <property name="employmentTypeCode" type="string">
+      <column length="5" name="employment_type_code" not-null="true"/>
+    </property>
+    <property name="empStatusCode" type="char">
+      <column length="1" name="emp_status_code" not-null="true"/>
+    </property>
+    <property name="payGradeCode" type="string">
+      <column length="6" name="pay_grade_code" not-null="true"/>
+    </property>
+    <property name="pdSalaryAmt" type="big_decimal">
+      <column name="pd_salary_amt" not-null="true" scale="4"/>
+    </property>
+    <property name="annualSalaryAmt" type="big_decimal">
+      <column name="annual_salary_amt" not-null="true" scale="4"/>
+    </property>
+    <property name="centro" type="string">
+      <column length="10" name="centro" not-null="true"/>
+    </property>
+    <property name="locCode" type="string">
+      <column length="10" name="loc_code" not-null="true"/>
+    </property>
+    <property name="locName" type="string">
+      <column length="50" name="loc_name"/>
+    </property>
+    <property name="phone1AreaCityCode" type="string">
+      <column length="5" name="phone_1_area_city_code"/>
+    </property>
+    <property name="phone1Nbr" type="string">
+      <column length="12" name="phone_1_nbr"/>
+    </property>
+    <property name="phone1ExtensionNbr" type="string">
+      <column length="5" name="phone_1_extension_nbr"/>
+    </property>
+    <property name="phone2AreaCityCode" type="string">
+      <column length="5" name="phone_2_area_city_code"/>
+    </property>
+    <property name="phone2Nbr" type="string">
+      <column length="12" name="phone_2_nbr"/>
+    </property>
+    <property name="phone2ExtensionNbr" type="string">
+      <column length="5" name="phone_2_extension_nbr"/>
+    </property>
+    <property name="phone3AreaCityCode" type="string">
+      <column length="5" name="phone_3_area_city_code"/>
+    </property>
+    <property name="phone3Nbr" type="string">
+      <column length="12" name="phone_3_nbr"/>
+    </property>
+    <property name="phone3ExtensionNbr" type="string">
+      <column length="5" name="phone_3_extension_nbr"/>
+    </property>
+    <property name="salaryChangeDate" type="timestamp">
+      <column length="23" name="salary_change_date" not-null="true"/>
+    </property>
+    <property name="salaryChangeTypeCode" type="string">
+      <column length="5" name="salary_change_type_code" not-null="true"/>
+    </property>
+    <property name="mgrEmpId" type="int">
+      <column name="mgr_emp_id" not-null="true"/>
+    </property>
+    <property name="mgrName" type="string">
+      <column length="50" name="mgr_name" not-null="true"/>
+    </property>
+    <property name="mgrPhone" type="string">
+      <column length="12" name="mgr_phone" not-null="true"/>
+    </property>
+    <property name="depositAcctNbr" type="string">
+      <column length="17" name="deposit_acct_nbr" not-null="true"/>
+    </property>
+    <property name="polizaId" type="string">
+      <column length="20" name="poliza_id" not-null="true"/>
+    </property>
+    <property name="individualId" type="string">
+      <column length="10" name="individual_id" not-null="true"/>
+    </property>
+    <property name="sexCode" type="char">
+      <column length="1" name="sex_code" not-null="true"/>
+    </property>
+    <property name="birthDate" type="timestamp">
+      <column length="23" name="birth_date" not-null="true"/>
+    </property>
+    <property name="deathDate" type="timestamp">
+      <column length="23" name="death_date"/>
+    </property>
+    <property name="nroBeeper" type="string">
+      <column length="30" name="nro_beeper"/>
+    </property>
+    <property name="nroCodeflota" type="string">
+      <column length="30" name="nro_codeflota"/>
+    </property>
+    <property name="nroCelular" type="string">
+      <column length="30" name="nro_celular"/>
+    </property>
+    <property name="serialArmaDeFuego" type="string">
+      <column length="50" name="serial_arma_de_fuego"/>
+    </property>
+    <property name="tipoArmaDeFuego" type="string">
+      <column length="50" name="tipo_arma_de_fuego"/>
+    </property>
+    <property name="addr1Line1" type="string">
+      <column length="35" name="addr_1_line_1" not-null="true"/>
+    </property>
+    <property name="addr1Line2" type="string">
+      <column length="35" name="addr_1_line_2" not-null="true"/>
+    </property>
+    <property name="addr1Line3" type="string">
+      <column length="35" name="addr_1_line_3" not-null="true"/>
+    </property>
+    <property name="addr1StreetOrPob1" type="string">
+      <column length="35" name="addr_1_street_or_pob_1" not-null="true"/>
+    </property>
+    <property name="addr1StreetOrPob2" type="string">
+      <column length="35" name="addr_1_street_or_pob_2" not-null="true"/>
+    </property>
+    <property name="addr1CityName" type="string">
+      <column length="35" name="addr_1_city_name" not-null="true"/>
+    </property>
+    <property name="addr1CountrySubEntityCode" type="string">
+      <column length="9" name="addr_1_country_sub_entity_code" not-null="true"/>
+    </property>
+    <property name="addr1PostalCode" type="string">
+      <column length="9" name="addr_1_postal_code" not-null="true"/>
+    </property>
+    <property name="addr1CountryCode" type="string">
+      <column length="2" name="addr_1_country_code" not-null="true"/>
+    </property>
+    <property name="bloodTypeCode" type="string">
+      <column length="3" name="blood_type_code" not-null="true"/>
+    </property>
+    <property name="bloodDonorInd" type="java.lang.Character">
+      <column length="1" name="blood_donor_ind"/>
+    </property>
+    <property name="height" type="string">
+      <column length="20" name="height"/>
+    </property>
+    <property name="weight" type="string">
+      <column length="20" name="weight"/>
+    </property>
+    <property name="nationalId1" type="string">
+      <column length="20" name="national_id_1" not-null="true"/>
+    </property>
+    <property name="lastActionCode" type="string">
+      <column length="2" name="last_action_code" not-null="true"/>
+    </property>
+    <property name="empInfoSourceCode" type="char">
+      <column length="1" name="emp_info_source_code" not-null="true"/>
+    </property>
+    <property name="activeReasonCode" type="string">
+      <column length="5" name="active_reason_code" not-null="true"/>
+    </property>
+    <property name="empPhoto" type="string">
+      <column length="50" name="emp_photo"/>
+    </property>
+    <property name="rutaPhoto" type="string">
+      <column length="50" name="ruta_photo"/>
+    </property>
+    <property name="asOfDate" type="timestamp">
+      <column length="23" name="as_of_date" not-null="true"/>
+    </property>
+    <property name="puestoSupCom" type="string">
+      <column length="10" name="puesto_sup_com"/>
+    </property>
+    <property name="puestoSupAdm" type="string">
+      <column length="10" name="puesto_sup_adm"/>
+    </property>
+    <property name="idCumpleano" type="java.lang.Long">
+      <column name="id_cumpleano" precision="10" scale="0"/>
+    </property>
+  </class>
+</hibernate-mapping>
