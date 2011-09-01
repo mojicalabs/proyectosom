@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated May 19, 2011 7:38:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="default" name="com.bpd.hipos.pojos.HiposBeneficiarios" table="hipos_beneficiarios">
+    <id name="id" type="java.lang.Integer">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <property name="codigoEmpleado" type="string">
+      <column length="10" name="codigo_empleado" not-null="true"/>
+    </property>
+    <property name="sexoEmpleado" type="string">
+      <column length="2" name="sexo_empleado"/>
+    </property>
+    <property name="chkTitular" type="string">
+      <column length="10" name="chk_titular"/>
+    </property>
+    <property name="bonificacionPercent" type="java.lang.Double">
+      <column name="bonificacion_percent" precision="22" scale="0"/>
+    </property>
+    <property name="bonificacionAmmount" type="java.lang.Double">
+      <column name="bonificacion_ammount" precision="22" scale="0"/>
+    </property>
+    <property name="planRetiroPercent" type="java.lang.Double">
+      <column name="plan_retiro_percent" precision="22" scale="0"/>
+    </property>
+    <property name="planRetiroAmmount" type="java.lang.Double">
+      <column name="plan_retiro_ammount" precision="22" scale="0"/>
+    </property>
+    <property name="becasHijosPercent" type="java.lang.Double">
+      <column name="becas_hijos_percent" precision="22" scale="0"/>
+    </property>
+    <property name="becasHijosAmmount" type="java.lang.Double">
+      <column name="becas_hijos_ammount" precision="22" scale="0"/>
+    </property>
+    <property name="seguroMedicoInternacionalPercent" type="java.lang.Double">
+      <column name="seguro_medico_internacional_percent" precision="22" scale="0"/>
+    </property>
+    <property name="seguroMedicoInternacionalAmmount" type="java.lang.Double">
+      <column name="seguro_medico_internacional_ammount" precision="22" scale="0"/>
+    </property>
+  </class>
+</hibernate-mapping>

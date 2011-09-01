@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated May 19, 2011 7:38:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="default" name="com.bpd.hipos.pojos.HiposEmpleados" table="hipos_empleados">
+    <id name="id" type="java.lang.Integer">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <property name="codigoEmpleado" type="string">
+      <column length="10" name="codigo_empleado" not-null="true"/>
+    </property>
+    <property name="tipoHipo" type="string">
+      <column length="10" name="tipo_hipo" not-null="true"/>
+    </property>
+    <property name="totalAmount" type="java.lang.Double">
+      <column name="totalAmount" precision="22" scale="0"/>
+    </property>
+    <property name="minAmountPlanRetiro" type="java.lang.Double">
+      <column name="minAmountPlanRetiro" precision="22" scale="0"/>
+    </property>
+    <property name="fechaRegistro" type="timestamp">
+      <column length="19" name="fecha_registro" not-null="true"/>
+    </property>
+    <property name="logonUser" type="string">
+      <column length="50" name="logon_user" not-null="true"/>
+    </property>
+    <property name="estado" type="string">
+      <column length="2" name="estado" not-null="true"/>
+    </property>
+  </class>
+</hibernate-mapping>
