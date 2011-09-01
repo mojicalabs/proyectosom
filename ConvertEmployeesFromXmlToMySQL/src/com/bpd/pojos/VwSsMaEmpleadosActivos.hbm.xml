@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated May 9, 2011 3:23:31 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="default" name="com.bpd.pojos.VwSsMaEmpleadosActivos" table="vw_ss_ma_empleados_activos">
+    <id name="id" type="java.lang.Integer">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <property name="codigoEmpleado" type="java.lang.Integer">
+      <column name="codigo_empleado"/>
+    </property>
+    <property name="nombreEmpleado" type="string">
+      <column name="nombre_empleado"/>
+    </property>
+    <property name="unidad" type="string">
+      <column name="unidad"/>
+    </property>
+    <property name="departamento" type="string">
+      <column name="departamento"/>
+    </property>
+    <property name="cargo" type="string">
+      <column name="cargo"/>
+    </property>
+    <property name="puesto" type="string">
+      <column name="puesto"/>
+    </property>
+    <property name="mgrEmpId" type="java.lang.Integer">
+      <column name="mgr_emp_id"/>
+    </property>
+    <property name="codigoSupervisorOriginal" type="string">
+      <column name="codigo_supervisor_original"/>
+    </property>
+    <property name="emplId" type="string">
+      <column name="empl_id"/>
+    </property>
+    <property name="emplDesc" type="string">
+      <column name="empl_desc"/>
+    </property>
+    <property name="empStatusCode" type="string">
+      <column name="emp_status_code"/>
+    </property>
+    <property name="firstName" type="string">
+      <column name="first_name"/>
+    </property>
+    <property name="firstMiddleName" type="string">
+      <column name="first_middle_name"/>
+    </property>
+    <property name="lastName" type="string">
+      <column name="last_name"/>
+    </property>
+    <property name="alias" type="string">
+      <column name="alias"/>
+    </property>
+    <property name="hireDate" type="string">
+      <column name="hire_date"/>
+    </property>
+    <property name="employmentTypeCode" type="string">
+      <column name="employment_type_code"/>
+    </property>
+    <property name="payGradeCode" type="string">
+      <column name="pay_grade_code"/>
+    </property>
+    <property name="centro" type="string">
+      <column name="centro"/>
+    </property>
+    <property name="locCode" type="string">
+      <column name="loc_code"/>
+    </property>
+    <property name="phone1AreaCityCode" type="string">
+      <column name="phone_1_area_city_code"/>
+    </property>
+    <property name="phone1Nbr" type="string">
+      <column name="phone_1_nbr"/>
+    </property>
+    <property name="phone1ExtensionNbr" type="string">
+      <column name="phone_1_extension_nbr"/>
+    </property>
+    <property name="depositAcctNbr" type="string">
+      <column name="deposit_acct_nbr"/>
+    </property>
+    <property name="polizaId" type="string">
+      <column name="poliza_id"/>
+    </property>
+    <property name="individualId" type="string">
+      <column name="individual_id"/>
+    </property>
+    <property name="sexCode" type="string">
+      <column name="sex_code"/>
+    </property>
+    <property name="birthDate" type="string">
+      <column name="birth_date"/>
+    </property>
+    <property name="bloodTypeCode" type="string">
+      <column name="blood_type_code"/>
+    </property>
+    <property name="bloodDonorInd" type="string">
+      <column name="blood_donor_ind"/>
+    </property>
+    <property name="height" type="string">
+      <column name="height"/>
+    </property>
+    <property name="weight" type="string">
+      <column name="weight"/>
+    </property>
+    <property name="nationalId1" type="string">
+      <column name="national_id_1"/>
+    </property>
+    <property name="empPhoto" type="string">
+      <column length="50" name="emp_photo"/>
+    </property>
+    <property name="rutaPhoto" type="string">
+      <column length="50" name="ruta_photo"/>
+    </property>
+    <property name="admRrhh" type="string">
+      <column name="adm_rrhh"/>
+    </property>
+  </class>
+</hibernate-mapping>
