@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<users>
+	<user>
+		<userName>U22962</userName>
+		<firstName>Ana</firstName>
+		<lastName>Caceres</lastName>
+		<permissions>ADMIN</permissions>
+		<password></password>
+		<id>22962</id>
+	</user>
+	
+	<user>
+		<userName>U29975</userName>
+		<firstName>Julio</firstName>
+		<lastName>Cuevas</lastName>
+		<permissions>ADMIN</permissions>
+		<password></password>
+		<id>29975</id>
+	</user>
+	
+</users>
