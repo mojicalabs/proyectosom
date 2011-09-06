@@ -9,34 +9,63 @@
     <title>Todas las tarifas de la República Dominicana</title>
 	<link rel="shortcut icon" href="favicon.png" /> 
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>application/css/v4-main-min.css"/> 
+	<script type="text/javascript" src="<?php echo base_url(); ?>application/script/jquery-1.6.1.min.js"></script>
 
-<style type="text/css">
-.menuItem {
-	font-family: Verdana, Geneva, sans-serif;
-	font-size: 14px;
-	background-color:green;
-	color:white;
-	border:1px solid #FFF;
-	height:25px;
-}
-.menuItemFont {
-	font-family: Verdana, Geneva, sans-serif;
-	font-size: 14px;
-	color:white;
-	text-decoration:none;
-}
-.centerText {
-	text-align: center;
-	font-family: Verdana, Geneva, sans-serif;
-	font-size: 12px;
-}
-</style>
+	<style type="text/css">
+		.menuItem {
+			font-family: Verdana, Geneva, sans-serif;
+			font-size: 14px;
+			background-color:green;
+			color:white;
+			border:1px solid #FFF;
+			height:25px;
+		}
+		.menuItemFont {
+			font-family: Verdana, Geneva, sans-serif;
+			font-size: 14px;
+			color:white;
+			text-decoration:none;
+		}
+		.centerText {
+			text-align: center;
+			font-family: Verdana, Geneva, sans-serif;
+			font-size: 12px;
+		}
+		.centerWhiteText {
+			text-align: center;
+			font-family: Verdana, Geneva, sans-serif;
+			font-size: 14px;
+			color:white;
+		}
+    </style>
     
-</head> 
-			
-<body class="{page:{name:'landing'},popunder:{url:'',event:'load',h:'',w:''}} billshrink landing yui-skin-sam loggedin lpv tvtrue loggedout inactiveuser landing"> 
+	<script type="text/javascript">
+		$(document).ready(function(){
 
-<div class="gomez production">
+			$("#portada").click(function() {
+				alert('User clicked on.');
+			});			
+
+			iFrameHeight('content');
+			
+            function iFrameHeight(id){
+                var h = 0;
+                if ( !document.all ){
+                    h = document.getElementById(id).contentDocument.height;
+                    document.getElementById(id).style.height = h + 60 + 'px';
+                } else if( document.all ){
+                    h = document.frames(id).document.body.scrollHeight;
+                    document.all.blockrandom.style.height = h + 20 + 'px';
+                }
+            }
+
+		});
+    </script>
+
+</head>
+			
+<body id="portada" class="{page:{name:'landing'},popunder:{url:'',event:'load',h:'',w:''}} billshrink landing yui-skin-sam loggedin lpv tvtrue loggedout inactiveuser landing"> 
+<div id="gomez" class="gomez production">
     <div id="container" class="wireless" style="background-color:#EFF0DE;">
     		<div style="width:100%;">
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -68,8 +97,10 @@
             <div id="bd"> 
                 <div id="homepage_layout_tabs" class="_tabs {tabs:{ fx: { 'opacity':'toggle', duration: 250 } }}"> 
                     <div id="homepage_pre" class="">
+                      <div id="publicitySpace" class="centerWhiteText">
+							<!--Espacio para colocar texto o publicidad-->
+                      </div>
                       <div id="homepage_col2" class="col"> 
-                        
                             <div id="homepage_vertical_tabs" class="_tabs"> 
                               <ul class="ui-tabs-nav">
 									<?php
@@ -97,8 +128,24 @@
                                     ?>
                                     <div id="hompage_tab_<?php echo($tipo_empresa->id); ?>" class="box-white-bevel ui-tabs-hide col"> 
                                       <div class="top" style="width:670px;"><div class="left"></div><div class="right"></div></div> 
-                                      <div class="content" style="width:610px;">
-                                      <iframe frameborder="0" src="<?php echo base_url(); ?>index.php/home/index/<?php echo($tipo_empresa->id); ?>/0" height="700" width="100%" scrolling="no"></iframe>
+                                      <div id="content" class="content" style="width:610px; height:1500px;">
+                                      <!--<iframe frameborder="0" src="<?php //echo base_url(); ?>index.php/home/index/<?php echo($tipo_empresa->id); ?>/0" height="100%" width="100%" scrolling="yes"></iframe>-->
+
+                                      <iframe
+                                            Xonload="iFrameHeight('blockrandom')"
+                                            id="blockrandom"
+                                            name="iframe"
+                                            src="<?php echo base_url(); ?>index.php/home/index/<?php echo($tipo_empresa->id); ?>/0"
+                                            width="100%"
+                                            height="1500px"
+                                            scrolling="auto"
+                                            align="top"
+                                            frameborder="0"
+                                            class="wrapper">
+                                                Esta opción no funcionará correctamente. Desafortunadamente, su navegador no soporta recuadros en línea.
+                                      </iframe>                                      
+                                      
+                                      
                                       </div> 
                                       <div class="bottom" style="width:670px;"><div class="left"></div><div class="right"></div></div> 
                                     </div> 
@@ -159,7 +206,9 @@
                 // ]]>
             </script> 
         </div> 
-</div> 
- 
+</div>
+<div align="center">
+<?php require_once('sitemeter.php'); ?>
+</div>
 </body> 
 </html> 

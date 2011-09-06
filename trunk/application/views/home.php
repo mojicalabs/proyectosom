@@ -19,6 +19,10 @@
 		});
 	});
 	
+	var loadEntityPage = function(idEmpresa, idIndicador){
+		window.location.href = ('<?php echo base_url(); ?>index.php/entity/index/' + idEmpresa + '/' + idIndicador);
+	}
+	
 	var showHistoryChart = function(idEmpresa, idIndicador){
 		$("#showHistoryChartFrame").attr("src", '<?php echo base_url(); ?>index.php/stocks/index/' + idEmpresa + '/' + idIndicador);
 		$("#showHistoryChartDiv").css("top", getPageScroll()[1] + (getPageHeight() / 15));
@@ -118,6 +122,7 @@ body {
 	<?php endforeach; ?>
 </select>
 <br>
+<?php if (count($tasas) > 0){ ?>
 <table border="0" width="100%" cellspacing="1" cellpadding="5" bgcolor="#CCCCCC" style="font-family:Verdana, Geneva, sans-serif; font-size:12px;">
   <tr>
     <td bgcolor="#EEEEEE" align="center">Posición</td>
@@ -134,23 +139,29 @@ body {
 ?>
   <tr>
     <td bgcolor="#FFFFFF" align="center"><?php echo($counter) ?></td>
-    <td bgcolor="#FFFFFF"><?php echo($tasa->nombreEmpresa) ?></td>
+    <td bgcolor="#FFFFFF"><a href="javascript:loadEntityPage(<?php echo($tasa->idEmpresa); ?>, <?php echo($tasa->idIndicador); ?>);"><?php echo($tasa->nombreEmpresa) ?></a></td>
     <td bgcolor="#FFFFFF" align="right" ><?php echo($tasa->valorIndicador) ?></td>
     <td bgcolor="#FFFFFF" align="center" xclass="WingdingsFontsGreen"><?php if ($tasa->tendencia != ''){ ?><img src="<?php echo base_url(); ?>application/images/<?php echo($tasa->color); ?>_<?php echo($tasa->tendencia); ?>_arrow.png" width="10" height="11" /><?php } ?></td>
-    <td bgcolor="#FFFFFF" class="WingdingsFonts">
-    	<a onclick="showHistoryChart(<?php echo($tasa->idEmpresa); ?>, <?php echo($tasa->idIndicador); ?>);" href=""><img src="<?php echo base_url(); ?>application/images/stocks_small_4.png" width="10" height="10" /></a>
-    </td>
-    <td bgcolor="#FFFFFF" class="WingdingsFontsYellow">«««««</td>
+    <td bgcolor="#FFFFFF" align="center" xclass="WingdingsFonts">
+    	<a onclick="showHistoryChart(<?php echo($tasa->idEmpresa); ?>, <?php echo($tasa->idIndicador); ?>);" href=""><img src="<?php echo base_url(); ?>application/images/stocks_small_6.png" width="10" height="10" /></a></td>
+    <td bgcolor="#FFFFFF" align="center" xclass="WingdingsFontsYellow">
+    <img src="<?php echo base_url(); ?>application/images/rating-star-on.png" width="13" height="12" />
+    <img src="<?php echo base_url(); ?>application/images/rating-star-on.png" width="13" height="12" />
+    <img src="<?php echo base_url(); ?>application/images/rating-star-on.png" width="13" height="12" />
+    <img src="<?php echo base_url(); ?>application/images/rating-star-off.png" width="13" height="12" />
+    <img src="<?php echo base_url(); ?>application/images/rating-star-off.png" width="13" height="12" />
+    </td>
   </tr>
 <?php
 	endforeach;
 ?>
 </table>
+<?php } ?>
 <br>
 <div id="showHistoryChartDiv" align="center" style="display:none; width:99%; height:370px; overflow:hidden;">
    <iframe id="showHistoryChartFrame" frameborder="0" src="" height="310" width="99%" scrolling="no"></iframe>
     <!--<button onclick="javascript:$('#showHistoryChartDiv').hide('slow');">Cerrar</button>-->
-</div> 
+</div>
 
 <p align="center" class="copyright">Generado al: <strong><?php echo(date("d-M-Y / h:i:s a")) ?></strong></p>
 

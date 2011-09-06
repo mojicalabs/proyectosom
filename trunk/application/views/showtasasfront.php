@@ -13,7 +13,7 @@
 
 		$.ajax({
 		   type: "POST",
-		   url: "/web/index.php/settasas/addProcess",
+		   url: "<?php echo base_url(); ?>index.php/settasas/addProcess",
 		   dataType: "text",
 		   success: function(msg){
 				idProceso = msg;
@@ -50,7 +50,6 @@
 					tasaDolarVenta = $(contenido).eq(1).text().trim();
 					tasaEuroCompra = $(contenido).eq(2).text().trim();
 					tasaEuroVenta = $(contenido).eq(3).text().trim();
-					tasas[0] = '{"data":{indicadores:{"tDC":"' + tasaDolarCompra + '", "tDV":"' + tasaDolarVenta + '", "tEC":"' + tasaEuroCompra + '", "tEV":"' + tasaEuroVenta + '"}, "banco":"' + key + '", "id":"' + id + '", "idProceso":"' + idProceso + '"}}';
 					tasas[1] = {data:{indicadores:{tDC:tasaDolarCompra, tDV:tasaDolarVenta, tEC:tasaEuroCompra, tEV:tasaEuroVenta}, banco:key, id:id, idProceso:idProceso}};
 					break;
 				case 'bancoleon':
@@ -60,7 +59,6 @@
 					tasaDolarVenta = textoTasasSplit[1].split("$")[1].trim();
 					tasaEuroCompra = 0.00;
 					tasaEuroVenta = 0.00;
-					tasas[0] = '{"data":{indicadores:{"tDC":"' + tasaDolarCompra + '", "tDV":"' + tasaDolarVenta + '", "tEC":"' + tasaEuroCompra + '", "tEV":"' + tasaEuroVenta + '"}, "banco":"' + key + '", "id":"' + id + '", "idProceso":"' + idProceso + '"}}';
 					tasas[1] = {data:{indicadores:{tDC:tasaDolarCompra, tDV:tasaDolarVenta, tEC:tasaEuroCompra, tEV:tasaEuroVenta}, banco:key, id:id, idProceso:idProceso}};
 					break;
 				case 'bancoprogreso':
@@ -68,7 +66,6 @@
 					tasaDolarVenta = $(contenido).eq(1).text().trim().split('$')[1].trim();
 					tasaEuroCompra = $(contenido).eq(2).text().trim().split('$')[1].trim();
 					tasaEuroVenta = $(contenido).eq(3).text().trim().split('$')[1].trim();
-					tasas[0] = '{"data":{indicadores:{"tDC":"' + tasaDolarCompra + '", "tDV":"' + tasaDolarVenta + '", "tEC":"' + tasaEuroCompra + '", "tEV":"' + tasaEuroVenta + '"}, "banco":"' + key + '", "id":"' + id + '", "idProceso":"' + idProceso + '"}}';
 					tasas[1] = {data:{indicadores:{tDC:tasaDolarCompra, tDV:tasaDolarVenta, tEC:tasaEuroCompra, tEV:tasaEuroVenta}, banco:key, id:id, idProceso:idProceso}};
 					break;
 				case 'banreservas': 
@@ -76,7 +73,6 @@
 					tasaDolarVenta = $(contenido).eq(2).text().trim();
 					tasaEuroCompra = $(contenido).eq(4).text().trim();
 					tasaEuroVenta = $(contenido).eq(5).text().trim();
-					tasas[0] = '{"data":{indicadores:{"tDC":"' + tasaDolarCompra + '", "tDV":"' + tasaDolarVenta + '", "tEC":"' + tasaEuroCompra + '", "tEV":"' + tasaEuroVenta + '"}, "banco":"' + key + '", "id":"' + id + '", "idProceso":"' + idProceso + '"}}';
 					tasas[1] = {data:{indicadores:{tDC:tasaDolarCompra, tDV:tasaDolarVenta, tEC:tasaEuroCompra, tEV:tasaEuroVenta}, banco:key, id:id, idProceso:idProceso}};
 					break;
 				case 'bancovimenca': 
@@ -84,7 +80,6 @@
 					tasaDolarVenta = $(contenido).eq(1).text().trim();
 					tasaEuroCompra = $(contenido).eq(2).text().trim();
 					tasaEuroVenta = $(contenido).eq(3).text().trim();
-					tasas[0] = '{"data":{indicadores:{"tDC":"' + tasaDolarCompra + '", "tDV":"' + tasaDolarVenta + '", "tEC":"' + tasaEuroCompra + '", "tEV":"' + tasaEuroVenta + '"}, "banco":"' + key + '", "id":"' + id + '", "idProceso":"' + idProceso + '"}}';
 					tasas[1] = {data:{indicadores:{tDC:tasaDolarCompra, tDV:tasaDolarVenta, tEC:tasaEuroCompra, tEV:tasaEuroVenta}, banco:key, id:id, idProceso:idProceso}};
 					break;
 				case 'bancopromerica': 
@@ -92,7 +87,6 @@
 					tasaDolarVenta = $(contenido).eq(2).text().trim();
 					tasaEuroCompra = 0.00;
 					tasaEuroVenta = 0.00;
-					tasas[0] = '{"data":{indicadores:{"tDC":"' + tasaDolarCompra + '", "tDV":"' + tasaDolarVenta + '", "tEC":"' + tasaEuroCompra + '", "tEV":"' + tasaEuroVenta + '"}, "banco":"' + key + '", "id":"' + id + '", "idProceso":"' + idProceso + '"}}';
 					tasas[1] = {data:{indicadores:{tDC:tasaDolarCompra, tDV:tasaDolarVenta, tEC:tasaEuroCompra, tEV:tasaEuroVenta}, banco:key, id:id, idProceso:idProceso}};
 					break;
 				case 'bancocaribe': 
@@ -100,7 +94,6 @@
 					tasaDolarVenta = $(contenido).eq(1).text().trim().split('$')[1].trim();
 					tasaEuroCompra = $(contenido).eq(2).text().trim().split('$')[1].trim();
 					tasaEuroVenta = $(contenido).eq(3).text().trim().split('$')[1].trim();
-					tasas[0] = '{"data":{indicadores:{"tDC":"' + tasaDolarCompra + '", "tDV":"' + tasaDolarVenta + '", "tEC":"' + tasaEuroCompra + '", "tEV":"' + tasaEuroVenta + '"}, "banco":"' + key + '", "id":"' + id + '", "idProceso":"' + idProceso + '"}}';
 					tasas[1] = {data:{indicadores:{tDC:tasaDolarCompra, tDV:tasaDolarVenta, tEC:tasaEuroCompra, tEV:tasaEuroVenta}, banco:key, id:id, idProceso:idProceso}};
 					break;
 				case 'citibank': 
@@ -108,7 +101,6 @@
 					tasaDolarVenta = $(contenido).eq(1).text().trim();
 					tasaEuroCompra = 0.00;
 					tasaEuroVenta = 0.00;
-					tasas[0] = '{"data":{indicadores:{"tDC":"' + tasaDolarCompra + '", "tDV":"' + tasaDolarVenta + '", "tEC":"' + tasaEuroCompra + '", "tEV":"' + tasaEuroVenta + '"}, "banco":"' + key + '", "id":"' + id + '", "idProceso":"' + idProceso + '"}}';
 					tasas[1] = {data:{indicadores:{tDC:tasaDolarCompra, tDV:tasaDolarVenta, tEC:tasaEuroCompra, tEV:tasaEuroVenta}, banco:key, id:id, idProceso:idProceso}};
 					break;
 				case 'bancolopezdeharo': 
@@ -116,7 +108,6 @@
 					tasaDolarVenta = $(contenido).eq(1).text().trim();
 					tasaEuroCompra = $(contenido).eq(2).text().trim();
 					tasaEuroVenta = $(contenido).eq(3).text().trim();
-					tasas[0] = '{"data":{indicadores:{"tDC":"' + tasaDolarCompra + '", "tDV":"' + tasaDolarVenta + '", "tEC":"' + tasaEuroCompra + '", "tEV":"' + tasaEuroVenta + '"}, "banco":"' + key + '", "id":"' + id + '", "idProceso":"' + idProceso + '"}}';
 					tasas[1] = {data:{indicadores:{tDC:tasaDolarCompra, tDV:tasaDolarVenta, tEC:tasaEuroCompra, tEV:tasaEuroVenta}, banco:key, id:id, idProceso:idProceso}};
 					break;
 				case 'bancoademi': 
@@ -124,7 +115,6 @@
 					tasaDolarVenta = $(contenido).eq(1).text().trim();
 					tasaEuroCompra = 0.00;
 					tasaEuroVenta = 0.00;
-					tasas[0] = '{"data":{indicadores:{"tDC":"' + tasaDolarCompra + '", "tDV":"' + tasaDolarVenta + '", "tEC":"' + tasaEuroCompra + '", "tEV":"' + tasaEuroVenta + '"}, "banco":"' + key + '", "id":"' + id + '", "idProceso":"' + idProceso + '"}}';
 					tasas[1] = {data:{indicadores:{tDC:tasaDolarCompra, tDV:tasaDolarVenta, tEC:tasaEuroCompra, tEV:tasaEuroVenta}, banco:key, id:id, idProceso:idProceso}};
 					break;
 				case 'bancobdi': 
@@ -132,7 +122,6 @@
 					tasaDolarVenta = $(contenido).eq(1).text().trim();
 					tasaEuroCompra = 0.00;
 					tasaEuroVenta = 0.00;
-					tasas[0] = '{"data":{indicadores:{"tDC":"' + tasaDolarCompra + '", "tDV":"' + tasaDolarVenta + '", "tEC":"' + tasaEuroCompra + '", "tEV":"' + tasaEuroVenta + '"}, "banco":"' + key + '", "id":"' + id + '", "idProceso":"' + idProceso + '"}}';
 					tasas[1] = {data:{indicadores:{tDC:tasaDolarCompra, tDV:tasaDolarVenta, tEC:tasaEuroCompra, tEV:tasaEuroVenta}, banco:key, id:id, idProceso:idProceso}};
 					break;
 				case 'bancorio':
@@ -142,7 +131,6 @@
 					tasaDolarVenta = textoTasasSplit[1].split("$")[1].trim();
 					tasaEuroCompra = 0.00;
 					tasaEuroVenta = 0.00;
-					tasas[0] = '{"data":{indicadores:{"tDC":"' + tasaDolarCompra + '", "tDV":"' + tasaDolarVenta + '", "tEC":"' + tasaEuroCompra + '", "tEV":"' + tasaEuroVenta + '"}, "banco":"' + key + '", "id":"' + id + '", "idProceso":"' + idProceso + '"}}';
 					tasas[1] = {data:{indicadores:{tDC:tasaDolarCompra, tDV:tasaDolarVenta, tEC:tasaEuroCompra, tEV:tasaEuroVenta}, banco:key, id:id, idProceso:idProceso}};
 					break;
 				case 'bancobhd':
@@ -152,10 +140,10 @@
 					tasaDolarVenta = tasasDolarSplit[1];
 					tasaEuroCompra = tasasEuroSplit[0];
 					tasaEuroVenta = tasasEuroSplit[1];
-					tasas[0] = '{"data":{indicadores:{"tDC":"' + tasaDolarCompra + '", "tDV":"' + tasaDolarVenta + '", "tEC":"' + tasaEuroCompra + '", "tEV":"' + tasaEuroVenta + '"}, "banco":"' + key + '", "id":"' + id + '", "idProceso":"' + idProceso + '"}}';
 					tasas[1] = {data:{indicadores:{tDC:tasaDolarCompra, tDV:tasaDolarVenta, tEC:tasaEuroCompra, tEV:tasaEuroVenta}, banco:key, id:id, idProceso:idProceso}};
 					break;
 			}
+			tasas[0] = 'tDC: ' + tasaDolarCompra + ' | tDV: ' + tasaDolarVenta + ' | tEC: ' + tasaEuroCompra + ' | tEV: ' + tasaEuroVenta + ' | banco: ' + key + ' | id: ' + id + ' | idProceso: ' + idProceso;
 			tasasObj[key] = tasas[1];
 			return tasas;
 		}
