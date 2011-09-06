@@ -43,8 +43,8 @@ class DataManager_model extends CI_Model {
 	function saveProceso(){
 		$idsEmpresas = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14);
 		$idsIndicadores = array(1, 2, 3, 4);
-		$this->db->where('idEmpresa', $idsEmpresas);
-		$this->db->where('idIndicador', $idsIndicadores);
+		$this->db->where_in('idEmpresa', $idsEmpresas);
+		$this->db->where_in('idIndicador', $idsIndicadores);
 		$this->db->delete($this->tblProject);
 		
 		$this->db->set('id', null);
@@ -52,18 +52,21 @@ class DataManager_model extends CI_Model {
 		return $this->db->insert_id();
     }
 	
-	function getTasasHistorico($idEmpresa = 1, $idIndicador = 4){
+	function getTasasHistorico($idEmpresa = 0, $idIndicador = 0){
 		$this->db->select("valorIndicador, (YEAR(fechaRegistro)) as ano, (MONTH(fechaRegistro)) as mes, DAY(fechaRegistro) as dia");
 		$this->db->where('idEmpresa', $idEmpresa);
 		$this->db->where('idIndicador', $idIndicador);
 		$this->db->where('valorIndicador > 0');
+		$this->db->group_by('ano');
+		$this->db->group_by('mes');
+		$this->db->group_by('dia');
 		$this->db->order_by("fechaRegistro", "asc");
 		$tasas = $this->db->get($this->tblProjectHistory)->result();
 
 		$result = "";
 		$result = $result . "[";
 		foreach($tasas as $tasa){
-			$result = $result . "[Date.UTC(". $tasa->ano .",". $tasa->mes .",". $tasa->dia ."),". $tasa->valorIndicador ."],";
+			$result = $result . "[Date.UTC(". $tasa->ano .",". ($tasa->mes - 1) .",". $tasa->dia ."),". $tasa->valorIndicador ."],";
 		}
 		$result = $result . "];";
 		return $result;
@@ -78,13 +81,16 @@ class DataManager_model extends CI_Model {
 		} else if ($idIndicador == 6 || $idIndicador == 7 || $idIndicador == 8 || $idIndicador == 9) {
 			$orderby = "desc";
 		}
-		$this->db->order_by("idProceso", "asc");
-		$this->db->order_by("idIndicador", "asc");
-		$this->db->order_by("valorIndicador", $orderby);
+
 		$this->db->where('idIndicador', $idIndicador);
 		$this->db->where('idProceso > 0');
 		$this->db->where('valorIndicador > 0');
+		
 		$this->db->group_by("idEmpresa");
+		
+		$this->db->order_by("idProceso", "asc");
+		$this->db->order_by("idIndicador", "asc");
+		$this->db->order_by("valorIndicador", $orderby);
 		$tasas = $this->db->get($this->tblProject)->result();
 		
 		foreach($tasas as $tasa){
@@ -150,7 +156,6 @@ class DataManager_model extends CI_Model {
 				$tendenciasOut[] = $tendenciaWay;
 			}
 		}
-		print_r($tendenciasOut);
 		return $tendenciasOut;
 	}
 	
@@ -178,6 +183,10 @@ class DataManager_model extends CI_Model {
 	function getTendenciasRows($idEmpresa = 1, $idIndicador = 1){
 		$this->db->where('idEmpresa', $idEmpresa);
 		$this->db->where('idIndicador', $idIndicador);
+		$this->db->order_by("idEmpresa", "asc");
+		$this->db->order_by("idIndicador", "asc");
+		$this->db->order_by("id", "desc");
+		$this->db->where('valorIndicador > 0');
 		$this->db->limit(3);
 		$tendencias = $this->db->get('vw_tendencias')->result();
 		return $tendencias;
@@ -207,6 +216,12 @@ class DataManager_model extends CI_Model {
 		$this->db->where('id', $idEmpresa);
 		$empresas = $this->db->get('empresas')->row();
 		return $empresas;
+	}
+
+	function getEvaluaciones($idEmpresa = 0){
+		$this->db->where('entityId', $idEmpresa);
+		$evaluaciones = $this->db->get('comentarios')->result();
+		return $evaluaciones;
 	}
 
 	function getIndicador($idIndicador = 0){
