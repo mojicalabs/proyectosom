@@ -5,12 +5,13 @@
 <title>Get Tasas</title>
 
 <script type="text/javascript" src="<?php echo base_url(); ?>application/script/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>application/script/jquery.dump.js"></script>
 
 <script type="text/javascript">
 	$(document).ready(function(){
 		var tasasObj = new Array();
 		var idProceso = 0;
-
+		
 		$.ajax({
 		   type: "POST",
 		   url: "<?php echo base_url(); ?>index.php/settasas/addProcess",
@@ -29,6 +30,7 @@
 	?>
 		$("#result<?php echo($empresa->key); ?>").load("<?php echo base_url(); ?>index.php/gethtml/index/<?php echo($empresa->key); ?><?php if ($empresa->location != ''){echo(' ' . $empresa->location);}; ?>", {"url":"<?php echo($empresa->url); ?>"}, function(response, status, xhr) {
 			var contenido = $("#result<?php echo($empresa->key); ?>").html();
+			$("#contenido<?php echo($empresa->key); ?>").val($("#result<?php echo($empresa->key); ?>").html());
 			var tasas = getTasasJSON("<?php echo($empresa->key); ?>", contenido, <?php echo($empresa->id); ?>);
 			$("#texto<?php echo($empresa->key); ?>").html(tasas[0]);
 			
@@ -50,88 +52,76 @@
 					tasaDolarVenta = $(contenido).eq(1).text().trim();
 					tasaEuroCompra = $(contenido).eq(2).text().trim();
 					tasaEuroVenta = $(contenido).eq(3).text().trim();
-					tasas[1] = {data:{indicadores:{tDC:tasaDolarCompra, tDV:tasaDolarVenta, tEC:tasaEuroCompra, tEV:tasaEuroVenta}, banco:key, id:id, idProceso:idProceso}};
 					break;
 				case 'bancoleon':
 					textoTasas = ($(contenido).text());
 					textoTasasSplit = textoTasas.split("\n");
 					tasaDolarCompra = textoTasasSplit[0].split("$")[1].trim();
 					tasaDolarVenta = textoTasasSplit[1].split("$")[1].trim();
-					tasaEuroCompra = 0.00;
-					tasaEuroVenta = 0.00;
-					tasas[1] = {data:{indicadores:{tDC:tasaDolarCompra, tDV:tasaDolarVenta, tEC:tasaEuroCompra, tEV:tasaEuroVenta}, banco:key, id:id, idProceso:idProceso}};
+					tasaEuroCompra = 0;
+					tasaEuroVenta = 0;
 					break;
 				case 'bancoprogreso':
 					tasaDolarCompra = $(contenido).eq(0).text().trim().split('$')[1].trim();
 					tasaDolarVenta = $(contenido).eq(1).text().trim().split('$')[1].trim();
 					tasaEuroCompra = $(contenido).eq(2).text().trim().split('$')[1].trim();
 					tasaEuroVenta = $(contenido).eq(3).text().trim().split('$')[1].trim();
-					tasas[1] = {data:{indicadores:{tDC:tasaDolarCompra, tDV:tasaDolarVenta, tEC:tasaEuroCompra, tEV:tasaEuroVenta}, banco:key, id:id, idProceso:idProceso}};
 					break;
 				case 'banreservas': 
 					tasaDolarCompra = $(contenido).eq(1).text().trim();
 					tasaDolarVenta = $(contenido).eq(2).text().trim();
 					tasaEuroCompra = $(contenido).eq(4).text().trim();
 					tasaEuroVenta = $(contenido).eq(5).text().trim();
-					tasas[1] = {data:{indicadores:{tDC:tasaDolarCompra, tDV:tasaDolarVenta, tEC:tasaEuroCompra, tEV:tasaEuroVenta}, banco:key, id:id, idProceso:idProceso}};
 					break;
 				case 'bancovimenca': 
 					tasaDolarCompra = $(contenido).eq(0).text().trim();
 					tasaDolarVenta = $(contenido).eq(1).text().trim();
 					tasaEuroCompra = $(contenido).eq(2).text().trim();
 					tasaEuroVenta = $(contenido).eq(3).text().trim();
-					tasas[1] = {data:{indicadores:{tDC:tasaDolarCompra, tDV:tasaDolarVenta, tEC:tasaEuroCompra, tEV:tasaEuroVenta}, banco:key, id:id, idProceso:idProceso}};
 					break;
 				case 'bancopromerica': 
 					tasaDolarCompra = $(contenido).eq(1).text().trim();
 					tasaDolarVenta = $(contenido).eq(2).text().trim();
-					tasaEuroCompra = 0.00;
-					tasaEuroVenta = 0.00;
-					tasas[1] = {data:{indicadores:{tDC:tasaDolarCompra, tDV:tasaDolarVenta, tEC:tasaEuroCompra, tEV:tasaEuroVenta}, banco:key, id:id, idProceso:idProceso}};
+					tasaEuroCompra = 0;
+					tasaEuroVenta = 0;
 					break;
 				case 'bancocaribe': 
 					tasaDolarCompra = $(contenido).eq(0).text().trim().split('$')[1].trim();
 					tasaDolarVenta = $(contenido).eq(1).text().trim().split('$')[1].trim();
 					tasaEuroCompra = $(contenido).eq(2).text().trim().split('$')[1].trim();
 					tasaEuroVenta = $(contenido).eq(3).text().trim().split('$')[1].trim();
-					tasas[1] = {data:{indicadores:{tDC:tasaDolarCompra, tDV:tasaDolarVenta, tEC:tasaEuroCompra, tEV:tasaEuroVenta}, banco:key, id:id, idProceso:idProceso}};
 					break;
 				case 'citibank': 
 					tasaDolarCompra = $(contenido).eq(0).text().trim();
 					tasaDolarVenta = $(contenido).eq(1).text().trim();
-					tasaEuroCompra = 0.00;
-					tasaEuroVenta = 0.00;
-					tasas[1] = {data:{indicadores:{tDC:tasaDolarCompra, tDV:tasaDolarVenta, tEC:tasaEuroCompra, tEV:tasaEuroVenta}, banco:key, id:id, idProceso:idProceso}};
+					tasaEuroCompra = 0;
+					tasaEuroVenta = 0;
 					break;
 				case 'bancolopezdeharo': 
 					tasaDolarCompra = $(contenido).eq(0).text().trim();
 					tasaDolarVenta = $(contenido).eq(1).text().trim();
 					tasaEuroCompra = $(contenido).eq(2).text().trim();
 					tasaEuroVenta = $(contenido).eq(3).text().trim();
-					tasas[1] = {data:{indicadores:{tDC:tasaDolarCompra, tDV:tasaDolarVenta, tEC:tasaEuroCompra, tEV:tasaEuroVenta}, banco:key, id:id, idProceso:idProceso}};
 					break;
 				case 'bancoademi': 
 					tasaDolarCompra = $(contenido).eq(0).text().trim();
 					tasaDolarVenta = $(contenido).eq(1).text().trim();
-					tasaEuroCompra = 0.00;
-					tasaEuroVenta = 0.00;
-					tasas[1] = {data:{indicadores:{tDC:tasaDolarCompra, tDV:tasaDolarVenta, tEC:tasaEuroCompra, tEV:tasaEuroVenta}, banco:key, id:id, idProceso:idProceso}};
+					tasaEuroCompra = 0;
+					tasaEuroVenta = 0;
 					break;
 				case 'bancobdi': 
 					tasaDolarCompra = $(contenido).eq(0).text().trim();
 					tasaDolarVenta = $(contenido).eq(1).text().trim();
-					tasaEuroCompra = 0.00;
-					tasaEuroVenta = 0.00;
-					tasas[1] = {data:{indicadores:{tDC:tasaDolarCompra, tDV:tasaDolarVenta, tEC:tasaEuroCompra, tEV:tasaEuroVenta}, banco:key, id:id, idProceso:idProceso}};
+					tasaEuroCompra = 0;
+					tasaEuroVenta = 0;
 					break;
 				case 'bancorio':
 					textoTasas = (contenido);
 					textoTasasSplit = textoTasas.split("&");
 					tasaDolarCompra = textoTasasSplit[0].split("$")[1].trim();
 					tasaDolarVenta = textoTasasSplit[1].split("$")[1].trim();
-					tasaEuroCompra = 0.00;
-					tasaEuroVenta = 0.00;
-					tasas[1] = {data:{indicadores:{tDC:tasaDolarCompra, tDV:tasaDolarVenta, tEC:tasaEuroCompra, tEV:tasaEuroVenta}, banco:key, id:id, idProceso:idProceso}};
+					tasaEuroCompra = 0;
+					tasaEuroVenta = 0;
 					break;
 				case 'bancobhd':
 					tasasDolarSplit = $(contenido).attr("dolar").split("/");
@@ -140,10 +130,18 @@
 					tasaDolarVenta = tasasDolarSplit[1];
 					tasaEuroCompra = tasasEuroSplit[0];
 					tasaEuroVenta = tasasEuroSplit[1];
-					tasas[1] = {data:{indicadores:{tDC:tasaDolarCompra, tDV:tasaDolarVenta, tEC:tasaEuroCompra, tEV:tasaEuroVenta}, banco:key, id:id, idProceso:idProceso}};
 					break;
 			}
-			tasas[0] = 'tDC: ' + tasaDolarCompra + ' | tDV: ' + tasaDolarVenta + ' | tEC: ' + tasaEuroCompra + ' | tEV: ' + tasaEuroVenta + ' | banco: ' + key + ' | id: ' + id + ' | idProceso: ' + idProceso;
+			
+			var diferencialCompraVentaDolar = 0;
+			var diferencialCompraVentaEuro = 0;
+			diferencialCompraVentaDolar = tasaDolarVenta - tasaDolarCompra;
+			diferencialCompraVentaEuro = tasaEuroVenta - tasaEuroCompra;
+			
+			//alert(key + '\ndiferencialCompraVentaDolar: ' + diferencialCompraVentaDolar + "\ndiferencialCompraVentaEuro: " + diferencialCompraVentaEuro);
+
+			tasas[0] = 'tDC: ' + tasaDolarCompra + ' | tDV: ' + tasaDolarVenta + ' | tEC: ' + tasaEuroCompra + ' | tEV: ' + tasaEuroVenta + ' | dCVD: ' + diferencialCompraVentaDolar + ' | dCVE: ' + diferencialCompraVentaEuro + ' | banco: ' + key + ' | id: ' + id + ' | idProceso: ' + idProceso;
+			tasas[1] = {data:{indicadores:{tDCXXX1:tasaDolarCompra, tDVXXX2:tasaDolarVenta, tECXXX3:tasaEuroCompra, tEVXXX4:tasaEuroVenta, dCVDXXX25:diferencialCompraVentaDolar, dCVEXXX26:diferencialCompraVentaEuro}, banco:key, id:id, idProceso:idProceso}};
 			tasasObj[key] = tasas[1];
 			return tasas;
 		}
@@ -201,7 +199,7 @@
 	foreach ($empresas as $id => $empresa):
 ?>
   <tr>
-    <td bgcolor="#FFFFFF" style="display:none;" width="32%" valign="top"><div style="border:1px solid #cccccc; height:100%;" id="result<?php echo($empresa->key); ?>"></div></td>
+    <td bgcolor="#FFFFFF" style="display:none;" valign="top"><div style="display:none; border:1px solid #cccccc; height:100%;" id="result<?php echo($empresa->key); ?>"></div><textarea id="contenido<?php echo($empresa->key); ?>" name="contenido<?php echo($empresa->key); ?>" rows="7" style="width:100%"><?php print_r($empresa); ?></textarea></td>
     <td bgcolor="#FFFFFF" width="200" valign="middle" align="left"><?php echo($empresa->name); ?></td>
     <td bgcolor="#FFFFFF" valign="top"><div id="texto<?php echo($empresa->key); ?>" name="texto<?php echo($empresa->key); ?>" style="width:100%"></div></td>
     <td bgcolor="#FFFFFF" valign="top"><input type="button" id="tasas<?php echo($empresa->key); ?>" name="<?php echo($empresa->key); ?>" value="Tasas: <?php echo($empresa->name); ?>" /></div></td>

@@ -18,7 +18,7 @@
 <file name="ga.js" server="ftp.tarifasrd.com//www/web/" local="129578422235061977" remote="129582319200000000" />
 <file name="homepage-min.js" server="ftp.tarifasrd.com//www/web/" local="129578422237312106" remote="129582319200000000" />
 <file name="jquery-1.3.2.min.js" server="ftp.tarifasrd.com//www/web/" local="129415913452362342" remote="129582319200000000" />
-<file name="jquery-1.6.1.min.js" server="ftp.tarifasrd.com//www/web/" local="129504809843026871" remote="129582319200000000" />
+<file name="jquery-1.6.1.min.js" server="ftp.tarifasrd.com//www/web/" local="129504809843026871" remote="129594016200000000" />
 <file name="jquery.js" server="ftp.tarifasrd.com//www/web/" local="129415913452518508" remote="129582319200000000" />
 <file name="jquery.maskedinput114.js" server="ftp.tarifasrd.com//www/web/" local="129415913452518508" remote="129582319200000000" />
 <file name="jquery.maskMoney.0.2.js" server="ftp.tarifasrd.com//www/web/" local="129415913452674674" remote="129582319200000000" />
@@ -28,4 +28,6 @@
 <file name="mint.js" server="ftp.tarifasrd.com//www/web/" local="129578422238092150" remote="129582319800000000" />
 <file name="quant.js" server="ftp.tarifasrd.com//www/web/" local="129578422238442170" remote="129582319800000000" />
 <file name="v4-base-min.js" server="ftp.tarifasrd.com//www/web/" local="129578422239162211" remote="129582319800000000" />
+<file name="jquery-1.6.2.min.js" server="ftp.tarifasrd.com//www/web/" local="129572717060000000" remote="129594016200000000" />
+<file name="jquery.dump.js" server="ftp.tarifasrd.com//www/web/" local="129605938631799023" remote="129605904600000000" />
 </dwsync>
