@@ -14,22 +14,28 @@ class Settasas extends CI_Controller {
 	
 	function addRecord($data){
 		$counter = 0;
-		$idProceso = 0;
+		$idProceso = $data['idProceso'];
+		$idEmpresa = $data['id'];
 		
 		foreach($data['indicadores'] as $key => $value){
 			$counter = $counter + 1;
-			$id = null;
+			//$idIndicador = $counter;
+			$valorIndicador = $value;
+			$keySplit = explode("XXX", $key);
+			$idIndicador = $keySplit[1];
 			$record = array(
-					'idProceso' => $data['idProceso'],
-					'idEmpresa' => $data['id'],
-					'idIndicador' => $counter,
-					'valorIndicador' => $value
+					'idProceso' => $idProceso,
+					'idEmpresa' => $idEmpresa,
+					'idIndicador' => $idIndicador,
+					'valorIndicador' => $valorIndicador
 				);
 
-			$id = $this->datamanager_model->save($record);
+			if (floatval($valorIndicador) > 0){
+				$this->datamanager_model->delIndicador($idEmpresa, $idIndicador);
+				$this->datamanager_model->saveIndicador($record);
+			}
 		}
 	}
-	
 }
 
 /* End of file welcome.php */

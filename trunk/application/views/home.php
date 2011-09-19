@@ -145,11 +145,12 @@ body {
     <td bgcolor="#FFFFFF" align="center" xclass="WingdingsFonts">
     	<a onclick="showHistoryChart(<?php echo($tasa->idEmpresa); ?>, <?php echo($tasa->idIndicador); ?>);" href=""><img src="<?php echo base_url(); ?>application/images/stocks_small_6.png" width="10" height="10" /></a></td>
     <td bgcolor="#FFFFFF" align="center" xclass="WingdingsFontsYellow">
-    <img src="<?php echo base_url(); ?>application/images/rating-star-on.png" width="13" height="12" />
-    <img src="<?php echo base_url(); ?>application/images/rating-star-on.png" width="13" height="12" />
-    <img src="<?php echo base_url(); ?>application/images/rating-star-on.png" width="13" height="12" />
-    <img src="<?php echo base_url(); ?>application/images/rating-star-off.png" width="13" height="12" />
-    <img src="<?php echo base_url(); ?>application/images/rating-star-off.png" width="13" height="12" />
+        <?php for ($stars = 1; $stars <= $tasa->score; $stars++) { ?>
+            <img src="<?php echo base_url(); ?>application/images/rating-star-on.png" width="13" height="12" border="0" />
+        <?php } ?>
+        <?php for ($stars = 1; $stars <= (5 - $tasa->score); $stars++) { ?>
+            <img src="<?php echo base_url(); ?>application/images/rating-star-off.png" width="13" height="12" border="0" />
+        <?php } ?>
     </td>
   </tr>
 <?php

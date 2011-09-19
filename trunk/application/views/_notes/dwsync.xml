@@ -3,14 +3,14 @@
 <file name="index.html" server="ftp.soludisa.com/www/economizando/tarifario/" local="129466668000000000" remote="129507733200000000" />
 <file name="showtasasback.php" server="ftp.soludisa.com/www/economizando/tarifario/" local="129509481610000000" remote="129509445600000000" />
 <file name="showtasasfront.php" server="ftp.soludisa.com/www/economizando/tarifario/" local="129509461242369428" remote="129509425200000000" />
-<file name="showtasasfront.php" server="ftp.tarifasrd.com//www/web/" local="129597472265018222" remote="129597436200000000" />
+<file name="showtasasfront.php" server="ftp.tarifasrd.com//www/web/" local="129606157404345003" remote="129606121200000000" />
 <file name="displaytasas.php" server="ftp.tarifasrd.com//www/web/" local="129516380612599127" remote="129594012000000000" />
-<file name="home.php" server="ftp.tarifasrd.com//www/web/" local="129593672415003984" remote="129594012600000000" />
+<file name="home.php" server="ftp.tarifasrd.com//www/web/" local="129603047855124588" remote="129603012600000000" />
 <file name="index.html" server="ftp.tarifasrd.com//www/web/" local="129466668000000000" remote="129594012600000000" />
 <file name="showtasasback.php" server="ftp.tarifasrd.com//www/web/" local="129509481610000000" remote="129594012600000000" />
 <file name="portada.php" server="ftp.tarifasrd.com//www/web/" local="129594736065008837" remote="129594699600000000" />
 <file name="home.php" server="ftp.tarifasrd.com//web/" local="129588730121653786" remote="129588694200000000" />
-<file name="entity.php" server="ftp.tarifasrd.com//www/web/" local="129594745997186925" remote="129594709800000000" />
+<file name="entity.php" server="ftp.tarifasrd.com//www/web/" local="129601782201058448" remote="129603012600000000" />
 <file name="entity_model1.php" server="ftp.tarifasrd.com//www/web/" local="129593746646246273" remote="129594012000000000" />
 <file name="entity_model2.php" server="ftp.tarifasrd.com//www/web/" local="129593715442271508" remote="129594012000000000" />
 <file name="index.htm" server="ftp.tarifasrd.com//www/web/" local="129592080267839244" remote="129594012000000000" />
@@ -25,4 +25,5 @@
 <file name="usuarios_edit.php" server="ftp.tarifasrd.com//www/web/" local="129586347272029993" remote="129594012600000000" />
 <file name="usuarios_list.php" server="ftp.tarifasrd.com//www/web/" local="129586346876087347" remote="129594012600000000" />
 <file name="sitemeter.php" server="ftp.tarifasrd.com//www/web/" local="129594732750359250" remote="129594700200000000" />
+<file name="gettasas.php" server="ftp.tarifasrd.com//www/web/" local="129606827922259032" remote="129606792000000000" />
 </dwsync>

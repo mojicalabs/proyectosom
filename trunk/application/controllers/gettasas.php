@@ -10,6 +10,11 @@ class Gettasas extends CI_Controller {
 		$data['tasas'] = $this->datamanager_model->getTasas($idIndicador);
 		$this->load->view("displaytasas", $data);
 	}
+	
+	public function telefonicas($idIndicador = 0){
+		$data['data'] = "NADA";
+		$this->load->view("gettasas", $data);
+	}
 }
 
 /* End of file welcome.php */
